@@ -1,14 +1,5 @@
 { config, pkgs, lib, ... }: {
   dconf.settings = {
-    "org/gnome/desktop/wm/preferences" = {
-      button-layout = "appmenu:minimize,maximize,close";
-    };
-
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      icon-theme = "Numix-Circle";
-    };
-
     "org/gnome/shell" = {
       enabled-extensions = ["blur-my-shell@aunetx" "dash-to-panel@jderose9.github.com" "date-menu-formatter@marcinjakubowski.github.com" "kimpanel@kde.org"];   
       favorite-apps=["org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "firefox.desktop" "code.desktop" "com.obsproject.Studio.desktop" "vlc.desktop" "obsidian.desktop" "thunderbird.desktop" "vesktop.desktop"]; 

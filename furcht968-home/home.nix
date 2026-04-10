@@ -7,7 +7,8 @@
   
   imports = [
     ./latex.nix
-    ./gnome.nix
+    ./gnome-dconf-desktop.nix
+    ./gnome-dconf-shell.nix
   ];
 
   programs.git = {
