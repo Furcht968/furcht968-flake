@@ -12,6 +12,10 @@
     variant = "";
   };
 
+  programs.niri = {
+    enable = true;
+  };
+
   # Enable sound with Pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
