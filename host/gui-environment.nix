@@ -1,4 +1,9 @@
-{lib, config, pkgs, ...}: {
+{lib, config, pkgs, inputs, ...}: {
+
+  imports = [
+    inputs.dms.nixosModules.dank-material-shell
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -12,8 +17,12 @@
     variant = "";
   };
 
-  programs.niri = {
+  programs.hyprland.enable = true;
+  
+  programs.dank-material-shell = {
     enable = true;
+    enableSystemMonitoring = true;
+    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
   };
 
   # Enable sound with Pipewire.
@@ -36,6 +45,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-panel gnomeExtensions.blur-my-shell gnomeExtensions.date-menu-formatter gnomeExtensions.kimpanel
     numix-icon-theme-circle
+    kitty
   ];
 
   fonts.packages = with pkgs; [
