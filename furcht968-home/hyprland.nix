@@ -46,6 +46,10 @@
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
       };
+
+      decoration = {
+        rounding = 10;
+      };
     };
   };
 
@@ -56,5 +60,13 @@
   
   home.file.".config/DankMaterialShell/settings.json" = {
     source = ./dms-settings.json;
+  };
+
+  programs.kitty = lib.mkForce {
+    enable = true;
+    settings = {
+      background_opacity = 0.75;
+      background_blur = 3;
+    };
   };
 }
