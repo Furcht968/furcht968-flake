@@ -37,7 +37,7 @@
       ];
 
       bind = [
-        ", PRINT, exec, hyprshot -m output --clipboard-only"
+        ", PRINT, exec, dms screenshot all --no-file"
 
         "$mainMod, Left, movewindow, l"
         "$mainMod, Right, movewindow, r"
