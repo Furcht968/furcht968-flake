@@ -2,17 +2,15 @@
 
   imports = [
     inputs.dms.nixosModules.dank-material-shell
+    inputs.dms.nixosModules.greeter
   ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
-  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = false;
+  services.desktopManager.gnome.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -20,7 +18,10 @@
     variant = "";
   };
 
-  console.keyMap = "jp106";
+  console = { 
+    keyMap = "jp106";
+    earlySetup = true;
+  };
   
   programs.hyprland.enable = true;
   
@@ -28,6 +29,11 @@
     enable = true;
     enableSystemMonitoring = true;
     dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+
+    greeter = {
+      enable = true;
+      compositor.name = "hyprland";
+    };
   };
 
   # Enable sound with Pipewire.
