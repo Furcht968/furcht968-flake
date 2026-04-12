@@ -32,6 +32,9 @@
         PREEMPT_RT = yes;
 
         NTSYNC = yes;
+        ANDROID_BINDER_IPC = yes;
+        ANDROID_BINDERFS = yes;
+        ANDROID_BINDER_DEVICES = freeform "binder,hwbinder,vndbinder";
       };
       ignoreConfigErrors = true;
     }).overrideAttrs (old: {

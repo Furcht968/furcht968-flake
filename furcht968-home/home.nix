@@ -7,9 +7,19 @@
   
   imports = [
     ./latex.nix
-    ./gnome-dconf-desktop.nix
-    ./gnome-dconf-shell.nix
+    #./gnome-dconf-desktop.nix
+    #./gnome-dconf-shell.nix
   ];
+  
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Numix-Circle";
+      package = pkgs.numix-icon-theme-circle;
+    };
+  };
+
+  dconf.enable = true;
   
   wayland.windowManager.hyprland = {
     enable = true;
@@ -33,6 +43,7 @@
         background_color = "0x000000";
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
     };
   };

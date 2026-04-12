@@ -63,7 +63,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-panel gnomeExtensions.blur-my-shell gnomeExtensions.date-menu-formatter gnomeExtensions.kimpanel
-    numix-icon-theme-circle
+    numix-icon-theme-circle papirus-icon-theme
     kitty
   ];
 
