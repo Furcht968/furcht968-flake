@@ -40,6 +40,7 @@
           }
         '';
       };
+      configHome = "/home/furcht968";
     };
   };
 
@@ -78,13 +79,5 @@
       fcitx5-gtk
     ];
     fcitx5.waylandFrontend = true;
-  };
-
-  environment.sessionVariables = {
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-    SDL_IM_MODULE = "fcitx";
-    GLFW_IM_MODULE = "ibus";
   };
 }
