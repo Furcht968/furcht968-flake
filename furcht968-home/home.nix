@@ -10,6 +10,35 @@
     ./gnome-dconf-desktop.nix
     ./gnome-dconf-shell.nix
   ];
+  
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      input = {
+        kb_layout = "jp";
+        kb_model = "jp106";
+      };
+
+      exec-once = [
+        "dms run"
+        "fcitx5 -d"
+      ];
+
+      bind = [
+        ", PRINT, exec, grimblast copy area"
+      ];
+    };
+  };
+
+  programs.hyprshot = {
+    enable = true;
+    saveLocation = "$HOME/Pictures/Screenshots";
+  };
+  
+  home.file.".config/DankMaterialShell/settings.json" = {
+    source = ./dms-settings.json;
+  };
 
   programs.git = {
     enable = true;
@@ -52,7 +81,6 @@
     enable = true;
     sessionVariables = {
       PATH = "/home/furcht968/.bun/bin:$PATH";
-
       CC = "clang";
       LD = "ld.lld";
       AR = "llvm-ar";
@@ -72,4 +100,6 @@
       precmd_functions+=(powerline_precmd)
     '';
   };
+
+  home.packages = with pkgs; [ grim grimblast slurp wl-clipboard ];
 }

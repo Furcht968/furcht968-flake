@@ -8,7 +8,10 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
   services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -17,6 +20,8 @@
     variant = "";
   };
 
+  console.keyMap = "jp106";
+  
   programs.hyprland.enable = true;
   
   programs.dank-material-shell = {
@@ -59,5 +64,13 @@
       fcitx5-mozc
       fcitx5-gtk
     ];
+  };
+
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    SDL_IM_MODULE = "fcitx";
+    GLFW_IM_MODULE = "ibus";
   };
 }
