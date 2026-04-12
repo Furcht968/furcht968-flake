@@ -72,6 +72,4 @@
       precmd_functions+=(powerline_precmd)
     '';
   };
-
-  home.packages = with pkgs; [ grim grimblast slurp wl-clipboard ];
 }

@@ -37,7 +37,7 @@
       ];
 
       bind = [
-        ", PRINT, exec, grimblast copy area"
+        ", PRINT, exec, hyprshot -m output --clipboard-only"
       ];
 
       misc = {
@@ -69,4 +69,6 @@
       background_blur = 3;
     };
   };
+
+  home.packages = with pkgs; [ hyprshot wl-clipboard libnotify ];
 }
