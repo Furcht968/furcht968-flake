@@ -27,6 +27,10 @@
   
   programs.dank-material-shell = {
     enable = true;
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
     enableSystemMonitoring = true;
     dgop.package = inputs.dgop.packages.${pkgs.system}.default;
 

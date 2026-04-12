@@ -26,18 +26,33 @@
     enable = true;
     systemd.enable = true;
     settings = {
+      "$mainMod" = "SUPER";
       input = {
         kb_layout = "jp";
         kb_model = "jp106";
       };
 
       exec-once = [
-        "dms run"
         "fcitx5 -d"
       ];
 
       bind = [
         ", PRINT, exec, hyprshot -m output --clipboard-only"
+
+        "$mainMod, Left, movewindow, l"
+        "$mainMod, Right, movewindow, r"
+        "$mainMod, Up, movewindow, u"
+        "$mainMod, Down, movewindow, d"
+
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
       ];
 
       misc = {
@@ -48,7 +63,11 @@
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 15;
+      };
+
+      general = {
+        border_size = 0;
       };
     };
   };
