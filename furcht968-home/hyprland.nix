@@ -88,6 +88,4 @@
       background_blur = 3;
     };
   };
-
-  home.packages = with pkgs; [ hyprshot wl-clipboard libnotify ];
 }
