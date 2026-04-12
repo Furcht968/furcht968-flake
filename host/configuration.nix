@@ -35,6 +35,14 @@
         ANDROID_BINDER_IPC = yes;
         ANDROID_BINDERFS = yes;
         ANDROID_BINDER_DEVICES = freeform "binder,hwbinder,vndbinder";
+
+        IP_NF_IPTABLES = yes;
+        IP_NF_FILTER = yes;
+        IP_NF_NAT = yes;
+        IP_NF_MANGLE = yes;
+        NF_TABLES = yes;
+        NF_CONNTRACK = yes;
+        NETFILTER_XTABLES = yes;
       };
       ignoreConfigErrors = true;
     }).overrideAttrs (old: {
@@ -55,6 +63,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  networking.nftables.enable = true;
 
   networking.firewall = {
     enable = true;
@@ -116,6 +126,7 @@
     llvm libcxx lld clang
     home-manager
     powerline-go nerd-fonts.caskaydia-mono
+    nftables
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

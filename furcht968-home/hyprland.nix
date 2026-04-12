@@ -46,6 +46,9 @@
 
         "$mainMod CTRL, Right, workspace, +1"
         "$mainMod CTRL, Left, workspace, -1"
+
+        "$mainMod CTRL SHIFT, Right, movetoworkspace, +1"
+        "$mainMod CTRL SHIFT, Left, movetoworkspace, -1"
       ];
 
       misc = {
