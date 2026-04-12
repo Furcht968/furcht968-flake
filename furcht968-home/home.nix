@@ -28,6 +28,12 @@
       bind = [
         ", PRINT, exec, grimblast copy area"
       ];
+
+      misc = {
+        background_color = "0x000000";
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+      };
     };
   };
 

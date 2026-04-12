@@ -33,6 +33,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "bak";
           home-manager.users.furcht968 = import ./furcht968-home/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
         }
