@@ -32,7 +32,14 @@
 
     greeter = {
       enable = true;
-      compositor.name = "hyprland";
+      compositor = {
+        name = "hyprland";
+        customConfig = ''
+          input {
+            kb_layout = jp
+          }
+        '';
+      };
     };
   };
 
@@ -70,6 +77,7 @@
       fcitx5-mozc
       fcitx5-gtk
     ];
+    fcitx5.waylandFrontend = true;
   };
 
   environment.sessionVariables = {
