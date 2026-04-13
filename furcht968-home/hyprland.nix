@@ -12,6 +12,13 @@
       package = pkgs.numix-icon-theme-circle;
     };
   };
+  
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Amber";
+    size = 24;
+  };
 
   dconf = {
       enable = true;
