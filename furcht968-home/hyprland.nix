@@ -36,8 +36,17 @@
         "fcitx5 -d"
       ];
 
+      bindrt = [
+        "$mainMod, Super_L, exec, dms ipc launcher toggle"
+      ];
+
       bind = [
         ", PRINT, exec, dms screenshot all --no-file"
+
+        "$mainMod, D, exec, vesktop"
+        "$mainMod, F, exec, pcmanfm"
+        "$mainMod, B, exec, firefox"
+        "$mainMod, T, exec, kitty"
 
         "$mainMod, Left, movewindow, l"
         "$mainMod, Right, movewindow, r"
