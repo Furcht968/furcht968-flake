@@ -13,6 +13,13 @@
     };
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Amber";
+    size = 24;
+  };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
@@ -27,6 +34,12 @@
     systemd.enable = true;
     settings = {
       "$mainMod" = "SUPER";
+
+      env = [
+        "XCURSOR_SIZE,Bibata-Modern-Amber"
+        "XCURSOR_SIZE,24"
+      ];
+
       input = {
         kb_layout = "jp";
         kb_model = "jp106";
@@ -34,6 +47,7 @@
 
       exec-once = [
         "fcitx5 -d"
+        "hyprctl setcursor Bibata-Modern-Amber 24"
       ];
 
       bind = [

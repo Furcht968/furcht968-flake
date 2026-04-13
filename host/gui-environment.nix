@@ -39,9 +39,19 @@
       compositor = {
         name = "hyprland";
         customConfig = ''
+          env = DMS_RUN_GREETER,1
+          
+          misc {
+            disable_hyprland_logo = true
+          }
+          
           input {
             kb_layout = jp
           }
+          
+          env = XCURSOR_THEME,Bibata-Modern-Amber
+          env = XCURSOR_SIZE,24
+          exec-once = hyprctl setcursor Bibata-Modern-Amber 24
         '';
       };
       configHome = "/home/furcht968";
@@ -68,7 +78,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-panel gnomeExtensions.blur-my-shell gnomeExtensions.date-menu-formatter gnomeExtensions.kimpanel
     numix-icon-theme-circle papirus-icon-theme
-    kitty
+    kitty bibata-cursors
   ];
 
   fonts.packages = with pkgs; [
