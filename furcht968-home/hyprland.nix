@@ -36,12 +36,10 @@
         "fcitx5 -d"
       ];
 
-      bindrt = [
-        "$mainMod, Super_L, exec, dms ipc launcher toggle"
-      ];
-
       bind = [
         ", PRINT, exec, dms screenshot all --no-file"
+
+        "$mainMod, V, exec, dms ipc clipboard toggle"
 
         "$mainMod, D, exec, vesktop"
         "$mainMod, F, exec, pcmanfm"
@@ -58,6 +56,8 @@
 
         "$mainMod CTRL SHIFT, Right, movetoworkspace, +1"
         "$mainMod CTRL SHIFT, Left, movetoworkspace, -1"
+
+        "$mainMod, Super_L, exec, dms ipc launcher toggle"
       ];
 
       misc = {
