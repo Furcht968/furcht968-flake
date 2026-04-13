@@ -13,21 +13,15 @@
     };
   };
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Amber";
-    size = 24;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
+  dconf = {
+      enable = true;
+      settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "Adwaita-dark";
+      };
     };
   };
-
-  dconf.enable = true;
   
   wayland.windowManager.hyprland = {
     enable = true;
@@ -46,14 +40,12 @@
       };
 
       exec-once = [
-        "fcitx5 -d"
         "hyprctl setcursor Bibata-Modern-Amber 24"
+        "fcitx5 -d"
       ];
 
       bind = [
         ", PRINT, exec, dms screenshot all --no-file"
-
-        "$mainMod, V, exec, dms ipc clipboard toggle"
 
         "$mainMod, D, exec, vesktop"
         "$mainMod, F, exec, pcmanfm"
@@ -71,14 +63,12 @@
         "$mainMod CTRL SHIFT, Right, movetoworkspace, +1"
         "$mainMod CTRL SHIFT, Left, movetoworkspace, -1"
 
+        "$mainMod, V, exec, dms ipc clipboard toggle"
         "$mainMod, Super_L, exec, dms ipc launcher toggle"
       ];
 
       misc = {
-        background_color = "0x000000";
         disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-        force_default_wallpaper = 0;
       };
 
       decoration = {
@@ -89,11 +79,6 @@
         border_size = 0;
       };
     };
-  };
-
-  programs.hyprshot = {
-    enable = true;
-    saveLocation = "$HOME/Pictures/Screenshots";
   };
   
   home.file.".config/DankMaterialShell/settings.json" = {
