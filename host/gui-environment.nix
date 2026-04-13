@@ -51,6 +51,8 @@
           
           env = XCURSOR_THEME,Bibata-Modern-Amber
           env = XCURSOR_SIZE,24
+          env = HYPRCURSOR_THEME,Bibata-Modern-Amber
+          env = HYPRCURSOR_SIZE,24
           exec-once = hyprctl setcursor Bibata-Modern-Amber 24
         '';
       };

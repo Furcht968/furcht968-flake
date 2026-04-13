@@ -18,6 +18,7 @@
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Amber";
     size = 24;
+    hyprcursor.enable = true;
   };
 
   dconf = {
@@ -39,6 +40,8 @@
       env = [
         "XCURSOR_SIZE,Bibata-Modern-Amber"
         "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,Bibata-Modern-Amber"
+        "HYPRCURSOR_SIZE,24"
       ];
 
       input = {
