@@ -55,7 +55,8 @@
       ];
 
       bind = [
-        ", PRINT, exec, dms screenshot all --no-file"
+        ", PRINT, exec, dms screenshot --no-file"
+        "ALT, PRINT, exec, dms screenshot window --no-file"
 
         "$mainMod, D, exec, vesktop"
         "$mainMod, F, exec, pcmanfm"
@@ -70,8 +71,8 @@
         "$mainMod CTRL, Right, workspace, +1"
         "$mainMod CTRL, Left, workspace, -1"
 
-        "$mainMod CTRL SHIFT, Right, movetoworkspace, +1"
-        "$mainMod CTRL SHIFT, Left, movetoworkspace, -1"
+        "$mainMod ALT, Right, movetoworkspace, +1"
+        "$mainMod ALT, Left, movetoworkspace, -1"
 
         "$mainMod, V, exec, dms ipc clipboard toggle"
         "$mainMod, Super_L, exec, dms ipc launcher toggle"
