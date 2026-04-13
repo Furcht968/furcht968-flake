@@ -55,7 +55,7 @@
       ];
 
       bind = [
-        ", PRINT, exec, dms screenshot --no-file"
+        ", PRINT, exec, dms screenshot full --no-file"
         "ALT, PRINT, exec, dms screenshot window --no-file"
 
         "$mainMod, D, exec, vesktop"
