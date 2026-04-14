@@ -131,6 +131,7 @@ in {
     home-manager
     powerline-go nerd-fonts.caskaydia-mono
     nftables
+    zip unzip p7zip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

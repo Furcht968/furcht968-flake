@@ -2,7 +2,8 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    firefox vscode vlc gedit obs-studio vesktop obsidian thunderbird pcmanfm
+    firefox vscode vlc gedit obs-studio vesktop obsidian thunderbird pcmanfm nomacs
+    inkscape blender
   ];
 
   virtualisation.waydroid.enable = true;
