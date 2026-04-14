@@ -2,9 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
-{
+let unstable-pkgs = import inputs.nixpkgs-unstable {
+  system = pkgs.system;
+  config.allowUnfree = true;
+}; 
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -24,7 +28,7 @@
     efi.canTouchEfiVariables = true;
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_6_18.extend (self: super: {
+  boot.kernelPackages = unstable-pkgs.linuxPackages.extend (self: super: {
     kernel = (super.kernel.override {
       stdenv = pkgs.clangStdenv;
       structuredExtraConfig = with lib.kernel; {
