@@ -58,6 +58,7 @@
       bind = [
         ", PRINT, exec, dms screenshot full --no-file"
         "ALT, PRINT, exec, dms screenshot window --no-file"
+        "SHIFT ALT, PRINT, exec, dms screenshot --no-file"
 
         "$mainMod, D, exec, vesktop"
         "$mainMod, F, exec, nautilus"
