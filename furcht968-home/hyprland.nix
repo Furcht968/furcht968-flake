@@ -26,7 +26,6 @@
       settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        gtk-theme = "Adwaita-dark";
       };
     };
   };
@@ -38,10 +37,12 @@
       "$mainMod" = "SUPER";
 
       env = [
-        "XCURSOR_SIZE,Bibata-Modern-Amber"
+        "XCURSOR_THEME,Bibata-Modern-Amber"
         "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,Bibata-Modern-Amber"
+        "HYPRCURSOR_THEME,Bibata-Modern-Amber"
         "HYPRCURSOR_SIZE,24"
+
+        "ADW_DISABLE_PORTAL,1"
       ];
 
       input = {
@@ -59,7 +60,7 @@
         "ALT, PRINT, exec, dms screenshot window --no-file"
 
         "$mainMod, D, exec, vesktop"
-        "$mainMod, F, exec, pcmanfm"
+        "$mainMod, F, exec, nautilus"
         "$mainMod, B, exec, firefox"
         "$mainMod, T, exec, kitty"
 

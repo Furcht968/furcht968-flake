@@ -22,7 +22,7 @@
     keyMap = "jp106";
     earlySetup = true;
   };
-  
+ 
   programs.hyprland.enable = true;
   
   programs.dank-material-shell = {
