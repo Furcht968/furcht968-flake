@@ -79,6 +79,11 @@
         "$mainMod, V, exec, dms ipc clipboard toggle"
         "$mainMod, Super_L, exec, dms ipc launcher toggle"
       ];
+      
+      bindel = [
+        ", XF86AudioRaiseVolume, exec, dms ipc audio increment 5"
+        ", XF86AudioLowerVolume, exec, dms ipc audio decrement 5"
+      ];
 
       misc = {
         disable_hyprland_logo = true;
