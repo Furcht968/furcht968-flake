@@ -8,7 +8,7 @@
   imports = [
     ./latex.nix
     ./hyprland.nix
-    ./hyprland-app-envrionment.nix
+    ./hyprland-app-environment.nix
     #./gnome-dconf-desktop.nix
     #./gnome-dconf-shell.nix
   ];
