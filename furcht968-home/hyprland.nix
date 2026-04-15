@@ -26,6 +26,7 @@
       settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
+        gtk-theme = "Adwaita-dark";
       };
     };
   };
@@ -41,8 +42,6 @@
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_THEME,Bibata-Modern-Amber"
         "HYPRCURSOR_SIZE,24"
-
-        "ADW_DISABLE_PORTAL,1"
       ];
 
       input = {
@@ -51,8 +50,8 @@
       };
 
       exec-once = [
-        "hyprctl setcursor Bibata-Modern-Amber 24"
         "fcitx5 -d"
+        "gsettings set org.gnome.desktop.interface color-scheme prefer-dark" 
       ];
 
       bind = [
@@ -60,10 +59,11 @@
         "ALT, PRINT, exec, dms screenshot window --no-file"
         "SHIFT ALT, PRINT, exec, dms screenshot --no-file"
 
-        "$mainMod, D, exec, vesktop"
-        "$mainMod, F, exec, nautilus"
-        "$mainMod, B, exec, firefox"
         "$mainMod, T, exec, kitty"
+        "$mainMod, B, exec, firefox"
+        "$mainMod, F, exec, pcmanfm"
+	"$mainMod, C, exec, code"
+        "$mainMod, D, exec, vesktop"
 
         "$mainMod, Left, movewindow, l"
         "$mainMod, Right, movewindow, r"
