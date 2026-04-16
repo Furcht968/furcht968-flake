@@ -132,7 +132,7 @@ in {
     gnumake cmake ninja
     llvm libcxx lld clang
     home-manager
-    powerline-go nerd-fonts.caskaydia-mono
+    starship powerline-go nerd-fonts.caskaydia-mono
     nftables
     zip unzip p7zip
   ];
