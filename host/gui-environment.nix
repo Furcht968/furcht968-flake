@@ -8,11 +8,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  };
-
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = false;
   services.desktopManager.gnome.enable = false;
@@ -22,6 +17,8 @@
     layout = "jp";
     variant = "";
   };
+
+  services.gvfs.enable = true;
 
   console = { 
     keyMap = "jp106";
