@@ -1,17 +1,16 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-[](#585858)\
-$username\
+format = """$username\
 [](bg:#444444 fg:#585858)\
 $hostname\
-[](bg:#0087AF fg:#444444)\
+[](bg:#FFA000 fg:#444444)\
 $directory\
-[](fg:#0087AF bg:#AFD700)\
+[](fg:#FFA000 bg:#005EFF)\
 $git_branch\
+[](fg:#005EFF bg:#002F80)\
 $git_status\
-[](fg:#AFD700 bg:#303030)\
-$shell\
+[](fg:#002F80 bg:#303030)\
+[ % ](bg:#303030 fg:#F7F7F7)\
 [](fg:#303030)\
 """
 
@@ -24,32 +23,25 @@ $shell\
 show_always = true
 style_user = "bg:#585858 fg:#BBBBBB"
 style_root = "bg:#585858 fg:#BBBBBB"
-format = '[$user ]($style)'
-disabled = false
+format = '[ $user ]($style)'
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [hostname]
-show_always = true
-style = "bg:#444444 fg:#BBBBBB"
-format = '[$hostname ]($style)'
-disabled = false
+ssh_only = false
+style = "bg:#444444"
+format = '[$ssh_symbol]($style)[ $hostname ]($style)'
 
 [directory]
-style = "bg:#0087AF fg:#FFFFFF"
+style = "bg:#FFA000 fg:#F0F0F0"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-style = "bg:#AFD700"
+style = "bg:#005EFF fg:#F0F0F0"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#AFD700"
-format = '[$all_status$ahead_behind ]($style)'
-
-[shell]
-style = "bg:#303030 fg:#F7F7F7"
-bash_indicatior = "$"
-zsh_indicatior = "%"
+style = "bg:#002F80 fg:#F0F0F0"
+format = '[ $all_status$ahead_behind ]($style)'
