@@ -110,4 +110,11 @@
       background_blur = 3;
     };
   };
+  
+  home.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    INPUT_METHOD = "fcitx";
+  };
 }

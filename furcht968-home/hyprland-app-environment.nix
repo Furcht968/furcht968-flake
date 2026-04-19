@@ -12,4 +12,15 @@
     icon = "vesktop";
     terminal = false;
   };
+  
+  
+  programs.firefox = {
+    enable = true;
+    profiles.default = {
+    settings = {
+        "gfx.webrender.all" = false;
+        "gfx.webrender.enabled" = false;
+      };
+    };
+  };
 }
