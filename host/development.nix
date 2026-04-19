@@ -12,5 +12,6 @@ in {
     uv
     cargo
     rustc
+    github-copilot-cli
   ];
 }
