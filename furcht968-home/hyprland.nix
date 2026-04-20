@@ -99,9 +99,10 @@
     };
   };
   
-  home.file.".config/DankMaterialShell/settings.json" = {
-    source = ./dms-settings.json;
-  };
+  home.activation.copyMyFile = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    cp ${./dms-settings.json} $HOME/.config/DankMaterialShell/settings.json
+    chmod 775 $HOME/.config/DankMaterialShell/settings.json
+  '';
 
   programs.kitty = lib.mkForce {
     enable = true;
