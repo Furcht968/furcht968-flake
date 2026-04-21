@@ -7,7 +7,7 @@ let unstable-pkgs = import inputs.nixpkgs-unstable {
 in {
   environment.systemPackages = with unstable-pkgs; [
     wineWow64Packages.stable
-    dxvk
+    dxvk.out
     winetricks
   ];
 
