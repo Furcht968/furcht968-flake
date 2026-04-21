@@ -5,10 +5,10 @@ let unstable-pkgs = import inputs.nixpkgs-unstable {
   config.allowUnfree = true;
 };
 in {
-  environment.systemPackages = [
-    unstable-pkgs.wineWow64Packages.stable
-    unstable-pkgs.dxvk.out
-    unstable-pkgs.winetricks
+  environment.systemPackages = with unstable-pkgs; [
+    wineWow64Packages.stable
+    dxvk
+    winetricks
   ];
 
   hardware.graphics = {
