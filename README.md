@@ -13,7 +13,7 @@ sudo nixos-rebuild switch --flake .#nixos
 sudo nixos-generate-config --show-config > ./host/hardware-configuration.nix
 ```
 
-ブート関連をリビルド
+リビルド(次回起動時に適用)
 ```
 sudo nixos-rebuild boot --flake .#nixos
 ```
