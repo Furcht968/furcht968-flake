@@ -1,8 +1,15 @@
 {lib, config, pkgs, ...}: {
   programs.firefox.enable = true;
 
+  programs.obs-studio = {
+    enable = true;
+    package = pkgs.obs-studio.override {
+      cudaSupport = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
-    firefox vscode vlc gedit obs-studio vesktop obsidian thunderbird pcmanfm eog
+    firefox vscode vlc gedit vesktop obsidian thunderbird pcmanfm eog
     inkscape blender
   ];
 

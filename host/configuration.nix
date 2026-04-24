@@ -61,6 +61,11 @@ in {
     "nvidia.NVreg_TemporaryFilePath=/var/tmp"
   ];
 
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    NVD_BACKEND = "direct";
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
