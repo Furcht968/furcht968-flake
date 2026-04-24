@@ -8,17 +8,17 @@ sudo nixos-rebuild switch --flake .#nixos
 ```
 
 ## 導入
-`hardware-configuration.nix`を移行
+リポジトリフォルダで`hardware-configuration.nix`を移行
 ```
 sudo nixos-generate-config --show-config > ./host/hardware-configuration.nix
 ```
 
-ブートをリビルド
+ブート関連をリビルド
 ```
 sudo nixos-rebuild boot --flake .#nixos
 ```
 
-終了し、**GRUBから**起動した後、リポジトリフォルダで
+システムを終了し、**GRUBから**起動した後、再度リポジトリフォルダで
 ```
 sudo nixos-rebuild switch --flake .#nixos
 ```
