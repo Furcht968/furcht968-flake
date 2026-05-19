@@ -100,7 +100,7 @@
   };
   
   home.activation.copyMyFile = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    cp ${./dms-settings.json} $HOME/.config/DankMaterialShell/settings.json
+    cp ${./src/dms-settings.json} $HOME/.config/DankMaterialShell/settings.json
     chmod 644 $HOME/.config/DankMaterialShell/settings.json
   '';
 

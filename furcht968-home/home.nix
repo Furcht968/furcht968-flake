@@ -71,6 +71,10 @@
   };
   
   home.file.".config/starship.toml" = {
-    source = ./starship-config.toml;
+    source = ./src/starship-config.toml;
+  };
+
+  home.file.".config/nvim/init.lua" = {
+    source = ./src/nvim-init.lua;
   };
 }
