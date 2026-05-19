@@ -144,6 +144,7 @@ in {
     llvm libcxx lld clang
     home-manager
     starship nerd-fonts.caskaydia-mono
+    opencode
     nftables
     zip unzip p7zip
   ];
