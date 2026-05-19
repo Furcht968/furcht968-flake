@@ -63,7 +63,7 @@
         "$mainMod, B, exec, firefox"
         "$mainMod, F, exec, pcmanfm"
 	"$mainMod, C, exec, code"
-        "$mainMod, D, exec, vesktop"
+        "$mainMod, D, exec, discord"
 
         "$mainMod, Left, movewindow, l"
         "$mainMod, Right, movewindow, r"
