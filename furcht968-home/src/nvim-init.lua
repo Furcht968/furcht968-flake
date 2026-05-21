@@ -81,7 +81,32 @@ require("lazy").setup({
       })
     end,
   },
+  {
+    "nickjvandyke/opencode.nvim",
+    version = "*",
+    dependencies = {
+      "folke/snacks.nvim",
+    },
+    keys = {
+      {
+        "<C-y>",
+        function()
+          require("opencode").toggle()
+        end,
+        desc = "Toggle OpenCode",
+      },
+    }
+  },
   { "tpope/vim-sleuth" },
+  {
+    "evanleck/vim-svelte",
+    ft = "svelte",
+  },
+
+  {
+    "posva/vim-vue",
+    ft = "vue",
+  },
   {
     "rockyzhang24/arctic.nvim",
     dependencies = { "rktjmp/lush.nvim" },
