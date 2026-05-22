@@ -50,6 +50,19 @@
     };
 
     initExtra = ''
+      ghq() {
+        if [[ $# -gt 0 ]]; then
+          command ghq "$@"
+        else
+          local dir
+          dir=$(ghq list -p | fzf --height 40% --reverse)
+
+          if [[ -n "$dir" ]]; then
+            cd "$dir"
+          fi
+        fi
+      }
+
       eval "$(starship init zsh)"
     '';
   };

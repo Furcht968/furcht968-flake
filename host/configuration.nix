@@ -141,7 +141,7 @@ in {
   environment.systemPackages = with pkgs; [
     os-prober
     zsh neovim vim lsd
-    git python3 ghq
+    git python3 ghq fzf
     gnumake cmake ninja
     llvm libcxx lld clang
     home-manager
