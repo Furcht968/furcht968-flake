@@ -22,23 +22,6 @@
     };
   };
 
-  programs.vim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      vim-airline
-      vim-airline-themes
-    ];
-    extraConfig = ''
-      set number
-
-      let g:airline_powerline_fonts = 1
-      let g:airline#extensions#tabline#enabled = 1
-      let g:airline#extensions#tabline#buffer_idx_mode = 1
-      let g:airline#extensions#whitespace#mixed_indent_algo = 1
-      let g:airline_theme="wombat"
-    '';
-  };
-
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
@@ -57,10 +40,13 @@
       AR = "llvm-ar";
       NM = "llvm-nm";
       STRIP = "llvm-strip";
+      GHQ_ROOT="$HOME/ghq";
     };
 
     shellAliases = {
       ls = "lsd -a";
+      vi = "nvim";
+      vim = "nvim";
     };
 
     initExtra = ''

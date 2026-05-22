@@ -59,6 +59,8 @@ in {
   boot.kernelModules = ["ntsync"];
   boot.kernelParams = [
     "nvidia.NVreg_TemporaryFilePath=/var/tmp"
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=1"
   ];
 
   environment.sessionVariables = {
@@ -139,7 +141,7 @@ in {
   environment.systemPackages = with pkgs; [
     os-prober
     zsh neovim vim lsd
-    git python3
+    git python3 ghq
     gnumake cmake ninja
     llvm libcxx lld clang
     home-manager

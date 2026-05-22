@@ -25,7 +25,11 @@
     earlySetup = true;
   };
  
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+  };
   
   programs.dank-material-shell = {
     enable = true;
@@ -70,6 +74,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
 
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
@@ -79,13 +84,30 @@
     #media-session.enable = true;
   };
 
+  services.pipewire.wireplumber.extraConfig = {
+    "99-screencast-policy" = {
+      "wireplumber.settings" = {
+        "link.max-retries" = 3;
+        "link.retry-ms" = 500;
+      };
+    };
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
-    config.common.default = "*";
+    config = {
+      common.default = [ "hyprland" "gtk" ];
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.RemoteDesktop" = [ "hyprland" ];
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -106,5 +128,10 @@
       fcitx5-gtk
     ];
     fcitx5.waylandFrontend = true;
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_SESSION_TYPE = "wayland";
   };
 }

@@ -53,7 +53,9 @@
         "fcitx5 -d"
         "gsettings set org.gnome.desktop.interface color-scheme prefer-dark" 
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-      ];
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "sleep 1 && systemctl --user restart xdg-desktop-portal xdg-desktop-portal-hyprland"
+    ];
 
       bind = [
         ", PRINT, exec, dms screenshot full --no-file"
