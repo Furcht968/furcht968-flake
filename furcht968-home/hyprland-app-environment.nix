@@ -6,10 +6,10 @@
     };
   };
 
-  xdg.desktopEntries.discord = {
-    name = "Discord";
-    exec = "discord --enable-wayland-ime --ozone-platform=wayland %U";
-    icon = "discord";
+  xdg.desktopEntries.vesktop = {
+    name = "Vesktop";
+    exec = "vesktop --enable-features=WebRTCPipeWireCapturer --enable-wayland-ime --ozone-platform=wayland %U";
+    icon = "vesktop";
     terminal = false;
   };
   

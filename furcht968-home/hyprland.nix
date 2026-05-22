@@ -52,6 +52,7 @@
       exec-once = [
         "fcitx5 -d"
         "gsettings set org.gnome.desktop.interface color-scheme prefer-dark" 
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
 
       bind = [
@@ -63,7 +64,7 @@
         "$mainMod, B, exec, firefox"
         "$mainMod, F, exec, pcmanfm"
 	"$mainMod, C, exec, code"
-        "$mainMod, D, exec, discord"
+        "$mainMod, D, exec, vesktop"
 
         "$mainMod, Left, movewindow, l"
         "$mainMod, Right, movewindow, r"

@@ -9,7 +9,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    firefox vscode vlc gedit discord obsidian thunderbird pcmanfm eog
+    firefox vscode vlc vesktop gedit obsidian thunderbird pcmanfm eog
     inkscape blender
   ];
 

@@ -9,8 +9,6 @@
     ./latex.nix
     ./hyprland.nix
     ./hyprland-app-environment.nix
-    #./gnome-dconf-desktop.nix
-    #./gnome-dconf-shell.nix
   ];
 
   programs.git = {

@@ -79,8 +79,17 @@
     #media-session.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
+
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.dash-to-panel gnomeExtensions.blur-my-shell gnomeExtensions.date-menu-formatter gnomeExtensions.kimpanel
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
     numix-icon-theme-circle papirus-icon-theme
     kitty bibata-cursors
   ];
