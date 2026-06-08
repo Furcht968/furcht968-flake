@@ -1,4 +1,4 @@
-{lib, config, pkgs, ...}: {
+{inputs, lib, config, pkgs, ...}: {
   programs.firefox.enable = true;
 
   programs.obs-studio = {
@@ -9,7 +9,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    firefox vscode vlc vesktop gedit obsidian thunderbird pcmanfm eog
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    vscode vlc vesktop gedit obsidian thunderbird pcmanfm eog
     inkscape blender
   ];
 

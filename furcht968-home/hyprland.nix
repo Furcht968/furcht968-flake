@@ -63,7 +63,7 @@
         "SHIFT ALT, PRINT, exec, dms screenshot --no-file"
 
         "$mainMod, T, exec, kitty"
-        "$mainMod, B, exec, firefox"
+        "$mainMod, B, exec, zen"
         "$mainMod, F, exec, pcmanfm"
 	"$mainMod, C, exec, code"
         "$mainMod, D, exec, vesktop"
