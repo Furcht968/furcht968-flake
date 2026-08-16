@@ -74,4 +74,8 @@
   home.file.".config/nvim/init.lua" = {
     source = ./src/nvim-init.lua;
   };
+
+  home.packages = with pkgs; [
+    gdlauncher-carbon
+  ];
 }

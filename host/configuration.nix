@@ -144,6 +144,8 @@ in {
     opencode
     nftables
     zip unzip p7zip
+
+    jdk17 jdk8
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
