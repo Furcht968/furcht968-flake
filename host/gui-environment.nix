@@ -34,12 +34,12 @@
   programs.dank-material-shell = {
     enable = true;
     quickshell.package = inputs.quickshell.packages.${pkgs.system}.default;
+    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
     systemd = {
       enable = true;
       restartIfChanged = true;
     };
     enableSystemMonitoring = true;
-    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
   };
 
   programs.dms-greeter = {
