@@ -14,7 +14,12 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    
+
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,9 +29,14 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, dms, dgop, ...}@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, dms, dgop, quickshell, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

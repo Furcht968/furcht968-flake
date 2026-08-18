@@ -2,7 +2,7 @@
 
   imports = [
     inputs.dms.nixosModules.dank-material-shell
-    inputs.dms.nixosModules.greeter
+    inputs.dank-greeter.nixosModules.default
   ];
 
   # Enable the X11 windowing system.
@@ -33,37 +33,42 @@
   
   programs.dank-material-shell = {
     enable = true;
+    quickshell.package = inputs.quickshell.packages.${pkgs.system}.default;
     systemd = {
       enable = true;
       restartIfChanged = true;
     };
     enableSystemMonitoring = true;
     dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+  };
 
-    greeter = {
-      enable = true;
-      compositor = {
-        name = "hyprland";
-        customConfig = ''
-          env = DMS_RUN_GREETER,1
-          
-          misc {
-            disable_hyprland_logo = true
-          }
-          
-          input {
-            kb_layout = jp
-          }
-          
-          env = XCURSOR_THEME,Bibata-Modern-Amber
-          env = XCURSOR_SIZE,24
-          env = HYPRCURSOR_THEME,Bibata-Modern-Amber
-          env = HYPRCURSOR_SIZE,24
-          exec-once = hyprctl setcursor Bibata-Modern-Amber 24
-        '';
-      };
-      configHome = "/home/furcht968";
+  programs.dms-greeter = {
+    enable = true;
+    logs = {
+      save = true;
+      path = "/var/lib/dms-greeter/dms-greeter.log";
     };
+    compositor = {
+      name = "hyprland";
+      customConfig = ''
+        env = DMS_RUN_GREETER,0
+          
+        misc {
+          disable_hyprland_logo = true
+        }
+          
+        input {
+          kb_layout = jp
+        }
+          
+        env = XCURSOR_THEME,Bibata-Modern-Amber
+        env = XCURSOR_SIZE,23
+        env = HYPRCURSOR_THEME,Bibata-Modern-Amber
+        env = HYPRCURSOR_SIZE,23
+        exec-once = hyprctl setcursor Bibata-Modern-Amber 23
+      '';
+    };
+    configHome = "/home/furcht968";
   };
 
   # Enable sound with Pipewire.
