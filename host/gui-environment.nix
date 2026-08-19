@@ -1,10 +1,4 @@
 {lib, config, pkgs, inputs, ...}: {
-
-  imports = [
-    inputs.dms.nixosModules.dank-material-shell
-    inputs.dank-greeter.nixosModules.default
-  ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   
@@ -24,25 +18,41 @@
     keyMap = "jp106";
     earlySetup = true;
   };
+
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+  };
  
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     package = pkgs.hyprland;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
   
-  programs.dank-material-shell = {
+  programs.dms-shell = {
     enable = true;
-    quickshell.package = inputs.quickshell.packages.${pkgs.system}.default;
-    dgop.package = inputs.dgop.packages.${pkgs.system}.default;
+    quickshell.package = pkgs.quickshell;
+
     systemd = {
       enable = true;
       restartIfChanged = true;
     };
     enableSystemMonitoring = true;
+    enableVPN = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    enableCalendarEvents = true;
   };
 
-  programs.dms-greeter = {
+  services.displayManager.dms-greeter = {
     enable = true;
     logs = {
       save = true;
@@ -51,9 +61,7 @@
     compositor = {
       name = "hyprland";
       customConfig = ''
-        env = DMS_RUN_GREETER,0
-          
-        misc {
+       misc {
           disable_hyprland_logo = true
         }
           
